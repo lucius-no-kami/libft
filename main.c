@@ -6,7 +6,7 @@
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:52:21 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/07 22:30:02 by lucius           ###   ########.fr       */
+/*   Updated: 2024/11/07 22:49:05 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int ac, char **av)
 	int isresult;
 	char result[250];
 	char ft_result[250];
+	char *ft_ptr_result;
+	char *ptr_result;
 	
 	
 	/* isalpha */
@@ -216,6 +218,25 @@ int	main(int ac, char **av)
 			printf("G\n");
 		else
 			printf("[%c | %s | %s]\n", 'c', result, ft_result);
+		i++;
+	}
+	i = 0;
+
+	/* strchr */
+	printf("-------- strchr --------\n[string | strchr | yours]\n");
+	while (i < ac)
+	{
+		ptr_result = strchr(av[i], 's');
+		ft_ptr_result = ft_strchr(av[i], 's');
+		if (ptr_result && ft_ptr_result)
+		{
+			if (!strcmp(ptr_result, ft_ptr_result))
+				printf("G\n");
+			else
+				printf("[%c | %s | %s]\n", 'c', ptr_result, ft_ptr_result);
+		}
+		else
+			printf("NULL result\n");
 		i++;
 	}
 	i = 0;
