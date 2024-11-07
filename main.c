@@ -6,7 +6,7 @@
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:52:21 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/07 20:34:35 by lucius           ###   ########.fr       */
+/*   Updated: 2024/11/07 22:05:41 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,6 +170,20 @@ int	main(int ac, char **av)
 	{
 		strlcpy(result, av[i], 5);
 		ft_strlcpy(ft_result, av[i], 5);
+		if (!strncmp(result, ft_result, 5))
+			printf("G\n");
+		else
+			printf("[%c | %s | %s]\n", 'c', result, ft_result);
+		i++;
+	}
+	i = 0;
+
+	/* strlcat */
+	printf("-------- strlcat --------\n[string | strlcat | yours]\n");
+	while (i < ac)
+	{
+		strlcat(result, av[i], 5);
+		ft_strlcat(ft_result, av[i], 5);
 		if (!strncmp(result, ft_result, 5))
 			printf("G\n");
 		else
