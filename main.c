@@ -6,7 +6,7 @@
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:52:21 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/07 22:49:05 by lucius           ###   ########.fr       */
+/*   Updated: 2024/11/08 09:27:26 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int ac, char **av)
 	char ft_result[250];
 	char *ft_ptr_result;
 	char *ptr_result;
-	
 	
 	/* isalpha */
 	printf("-------- isalpha --------\n[char | isalpha | yours]\n");
@@ -111,7 +110,7 @@ int	main(int ac, char **av)
 	i = 0;
 
 	/* memset */
-	printf("-------- memset --------\n[string | memset | yours]\n");
+	printf("-------- memset --------\n[char | memset | yours]\n");
 	while (i < ac)
 	{
 		memset(result, av[i][0], 10);
@@ -125,7 +124,7 @@ int	main(int ac, char **av)
 	i = 0;
 
 	/* bzero */
-	printf("-------- bzero --------\n[string | bzero | yours]\n");
+	printf("-------- bzero --------\n[char | bzero | yours]\n");
 	while (i < ac)
 	{
 		bzero(result, 10);
@@ -133,7 +132,7 @@ int	main(int ac, char **av)
 		if (!strncmp(result, ft_result, 10))
 			printf("G\n");
 		else
-			printf("[%c | %s | %s]\n", 'c', result, ft_result);
+			printf("[%c | %s | %s]\n", 0, result, ft_result);
 		i++;
 	}
 	i = 0;
@@ -147,7 +146,7 @@ int	main(int ac, char **av)
 		if (!strncmp(result, ft_result, 5))
 			printf("G\n");
 		else
-			printf("[%c | %s | %s]\n", 'c', result, ft_result);
+			printf("[%c | %s | %s]\n", av[i], result, ft_result);
 		i++;
 	}
 	i = 0;
@@ -161,7 +160,7 @@ int	main(int ac, char **av)
 		if (!strncmp(result, ft_result, 5))
 			printf("G\n");
 		else
-			printf("[%c | %s | %s]\n", 'c', result, ft_result);
+			printf("[%c | %s | %s]\n", av[i], result, ft_result);
 		i++;
 	}
 	i = 0;
@@ -175,7 +174,7 @@ int	main(int ac, char **av)
 		if (!strncmp(result, ft_result, 5))
 			printf("G\n");
 		else
-			printf("[%c | %s | %s]\n", 'c', result, ft_result);
+			printf("[%c | %s | %s]\n", av[i], result, ft_result);
 		i++;
 	}
 	i = 0;
@@ -189,13 +188,13 @@ int	main(int ac, char **av)
 		if (!strncmp(result, ft_result, 5))
 			printf("G\n");
 		else
-			printf("[%c | %s | %s]\n", 'c', result, ft_result);
+			printf("[%c | %s | %s]\n", av[i], result, ft_result);
 		i++;
 	}
 	i = 0;
 
 	/* toupper */
-	printf("-------- toupper --------\n[string | toupper | yours]\n");
+	printf("-------- toupper --------\n[char | toupper | yours]\n");
 	while (i < ac)
 	{
 		toupper(av[i][1]);
@@ -203,13 +202,13 @@ int	main(int ac, char **av)
 		if (!strncmp(result, ft_result, 5))
 			printf("G\n");
 		else
-			printf("[%c | %s | %s]\n", 'c', result, ft_result);
+			printf("[%c | %s | %s]\n", av[i][1], result, ft_result);
 		i++;
 	}
 	i = 0;
 
 	/* tolower */
-	printf("-------- tolower --------\n[string | tolower | yours]\n");
+	printf("-------- tolower --------\n[char | tolower | yours]\n");
 	while (i < ac)
 	{
 		tolower(av[i][1]);
@@ -217,13 +216,13 @@ int	main(int ac, char **av)
 		if (!strncmp(result, ft_result, 5))
 			printf("G\n");
 		else
-			printf("[%c | %s | %s]\n", 'c', result, ft_result);
+			printf("[%c | %s | %s]\n", av[i][1], result, ft_result);
 		i++;
 	}
 	i = 0;
 
 	/* strchr */
-	printf("-------- strchr --------\n[string | strchr | yours]\n");
+	printf("-------- strchr --------\n[string | char_to_find | strchr | yours]\n");
 	while (i < ac)
 	{
 		ptr_result = strchr(av[i], 's');
@@ -233,7 +232,26 @@ int	main(int ac, char **av)
 			if (!strcmp(ptr_result, ft_ptr_result))
 				printf("G\n");
 			else
-				printf("[%c | %s | %s]\n", 'c', ptr_result, ft_ptr_result);
+				printf("[%s | %c | %s | %s]\n", av[i], 's', ptr_result, ft_ptr_result);
+		}
+		else
+			printf("NULL result\n");
+		i++;
+	}
+	i = 0;
+
+	/* strrchr */
+	printf("-------- strrchr --------\n[string | char_to_find | strrchr | yours]\n");
+	while (i < ac)
+	{
+		ptr_result = strrchr(av[i], 's');
+		ft_ptr_result = ft_strrchr(av[i], 's');
+		if (ptr_result && ft_ptr_result)
+		{
+			if (!strcmp(ptr_result, ft_ptr_result))
+				printf("G\n");
+			else
+				printf("[%s | %c | %s | %s]\n", av[i], 's', ptr_result, ft_ptr_result);
 		}
 		else
 			printf("NULL result\n");
