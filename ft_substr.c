@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 15:18:41 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/08 22:29:49 by lucius           ###   ########.fr       */
+/*   Created: 2024/11/08 21:06:20 by lucius            #+#    #+#             */
+/*   Updated: 2024/11/08 22:30:11 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	len_n;
-	size_t	len_h;
+	char	*subs;
+	size_t	slen;
 
-	len_n = ft_strlen(needle);
-	len_h = ft_strlen(haystack);
-	if (!len_n)
-		return ((char *)haystack);
-	if (len > len_h)
-		len = len_h;
-	while (len >= len_n)
-	{
-		if (!ft_strncmp(haystack, needle, len_n))
-			return ((char *)haystack);
-		haystack++;
-		len--;
-	}
-	return (NULL);
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
+	if (start >= slen)
+		return (ft_strdup(""));
+	if (len > slen - start)
+		len = slen - start;
+	subs = (char *)malloc((len + 1) * sizeof(char));
+	if (!subs)
+		return (NULL);
+	ft_strlcpy(subs, s + start, len + 1);
+	return (subs);
 }
