@@ -6,7 +6,7 @@
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:38:44 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/08 19:17:37 by lucius           ###   ########.fr       */
+/*   Updated: 2024/11/08 19:31:24 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_tolower(int c);
 int		ft_atoi(const char *nptr);
 
 /* Memory operations */
+char	*ft_strdup(const char *s);
 void	*ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_calloc(size_t elnum, size_t elsize);
