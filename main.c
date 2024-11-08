@@ -6,7 +6,7 @@
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:52:21 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/08 14:33:33 by lucius           ###   ########.fr       */
+/*   Updated: 2024/11/08 15:04:18 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -288,6 +288,20 @@ int	main(int ac, char **av)
 		}
 		else
 			printf("NULL result\n");
+		i++;
+	}
+	i = 0;
+
+	/* memcmp */
+	printf("-------- memcmp --------\n[string1 | to_compare_to | memcmp | yours]\n");
+	while (i < ac)
+	{
+		isresult = memcmp(av[i], "tester", 6);
+		ft_isresult = ft_memcmp(av[i], "tester", 6);
+		if (isresult == ft_isresult)
+			printf("G\n");
+		else
+			printf("[%c | %d | %d]\n", av[i], "tester", isresult, ft_isresult);
 		i++;
 	}
 	i = 0;
