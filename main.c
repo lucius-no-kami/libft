@@ -6,7 +6,7 @@
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:52:21 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/08 15:04:18 by lucius           ###   ########.fr       */
+/*   Updated: 2024/11/08 15:28:33 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <bsd/string.h>
 
 int	main(int ac, char **av)
 {
@@ -302,6 +303,25 @@ int	main(int ac, char **av)
 			printf("G\n");
 		else
 			printf("[%c | %d | %d]\n", av[i], "tester", isresult, ft_isresult);
+		i++;
+	}
+	i = 0;
+
+	/* strnstr */
+	printf("-------- strnstr --------\n[string | string_to_find | strnstr | yours]\n");
+	while (i < ac)
+	{
+		ptr_result = strnstr(av[i], "test", ft_strlen(av[i]));
+		ft_ptr_result = ft_strnstr(av[i], "test", ft_strlen(av[i]));
+		if (ptr_result && ft_ptr_result)
+		{
+			if (!strcmp(ptr_result, ft_ptr_result))
+				printf("G\n");
+			else
+				printf("[%s | %s | %s | %s]\n", av[i], "test", ptr_result, ft_ptr_result);
+		}
+		else
+			printf("NULL result\n");
 		i++;
 	}
 	i = 0;
