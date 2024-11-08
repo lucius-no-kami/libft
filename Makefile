@@ -46,7 +46,7 @@ RM = rm -rf
 # fclean	remove .o + binary
 # re		using fclean then all
 
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
