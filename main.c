@@ -6,7 +6,7 @@
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:52:21 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/08 15:28:33 by lucius           ###   ########.fr       */
+/*   Updated: 2024/11/08 16:33:43 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -322,6 +322,20 @@ int	main(int ac, char **av)
 		}
 		else
 			printf("NULL result\n");
+		i++;
+	}
+	i = 0;
+
+	/* atoi */
+	printf("-------- atoi --------\n[string | atoi | yours]\n");
+	while (i < ac)
+	{
+		isresult = atoi(av[i]);
+		ft_isresult = ft_atoi(av[i]);
+		if (isresult == ft_isresult)
+			printf("G\n");
+		else
+			printf("[%s | %d | %d]\n", av[i], isresult, ft_isresult);
 		i++;
 	}
 	i = 0;

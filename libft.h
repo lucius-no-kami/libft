@@ -6,7 +6,7 @@
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:38:44 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/08 15:19:33 by lucius           ###   ########.fr       */
+/*   Updated: 2024/11/08 16:35:20 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_isprint(int c);
 /* Character transformations */
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_atoi(const char *nptr);
 
 /* Memory operations */
 void	*ft_bzero(void *s, size_t n);
