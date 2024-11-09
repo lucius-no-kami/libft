@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 08:52:54 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/08 10:08:19 by lucius           ###   ########.fr       */
+/*   Created: 2024/11/09 14:42:26 by lucius            #+#    #+#             */
+/*   Updated: 2024/11/09 15:17:07 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	size_t	slen;
 
-	i = (int)ft_strlen(s) + 1;
-	while (i--)
-		if (*(s + i) == (char)c)
-			return ((char *)s + i);
+	slen = ft_strlen(s);
+	while (*(s + slen) != (char)c && slen > 0)
+		slen--;
+	if (*(s + slen) == (char)c)
+		return ((char *)(s + slen));
 	return (NULL);
 }

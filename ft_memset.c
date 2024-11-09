@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 13:22:55 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/07 13:24:58 by lucius           ###   ########.fr       */
+/*   Created: 2024/11/09 09:34:59 by lucius            #+#    #+#             */
+/*   Updated: 2024/11/09 09:37:49 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*(char *)(s + i) = (char)c;
+		*(unsigned char *)(s + i) = (char)c;
 		i++;
 	}
 	return (s);

@@ -5,27 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 20:19:19 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/07 20:36:56 by lucius           ###   ########.fr       */
+/*   Created: 2024/11/09 10:19:39 by lucius            #+#    #+#             */
+/*   Updated: 2024/11/09 11:51:40 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t csize)
 {
-	size_t	i;
-	size_t	src_len;
+	size_t	slen;
 
-	i = 0;
-	src_len = ft_strlen(src);
-	if (dsize == 0)
-		return (src_len);
-	while (i < dsize - 1 && src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (src_len);
+	slen = ft_strlen(src);
+	if (csize == 0)
+		return (slen);
+	if (csize > slen)
+		csize = slen + 1;
+	ft_memcpy(dst, src, csize - 1);
+	dst[csize - 1] = '\0';
+	return (slen);
 }

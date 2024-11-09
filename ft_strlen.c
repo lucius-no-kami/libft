@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 13:18:39 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/07 13:20:09 by lucius           ###   ########.fr       */
+/*   Created: 2024/11/09 09:10:22 by lucius            #+#    #+#             */
+/*   Updated: 2024/11/09 09:11:53 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	while (s[i])
+	while (*s++)
 		i++;
 	return (i);
 }

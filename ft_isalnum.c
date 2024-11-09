@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 13:09:38 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/07 13:12:30 by lucius           ###   ########.fr       */
+/*   Created: 2024/11/09 08:59:09 by lucius            #+#    #+#             */
+/*   Updated: 2024/11/09 09:00:11 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) || ft_isdigit(c))
-		return (8);
+		return (1);
 	return (0);
 }
