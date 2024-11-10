@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 18:38:34 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/08 19:23:50 by lucius           ###   ########.fr       */
+/*   Created: 2024/11/10 14:10:01 by lucius            #+#    #+#             */
+/*   Updated: 2024/11/10 15:04:31 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_calloc(size_t elnum, size_t elsize)
 {
-	void	*dst;
+	void	*ptr;
 
-	dst = malloc(elnum * elsize);
-	if (!dst)
-		return (NULL);
-	ft_bzero(dst, elnum * elsize);
-	return (dst);
+	ptr = malloc(elnum * elsize);
+	if (!ptr)
+		return (ptr);
+	ft_bzero(ptr, elnum * elsize);
+	return (ptr);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 15:18:41 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/08 22:29:49 by lucius           ###   ########.fr       */
+/*   Created: 2024/11/10 11:00:04 by lucius            #+#    #+#             */
+/*   Updated: 2024/11/10 11:55:51 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,16 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	len_n;
-	size_t	len_h;
+	size_t	nlen;
 
-	len_n = ft_strlen(needle);
-	len_h = ft_strlen(haystack);
-	if (!len_n)
+	nlen = ft_strlen(needle);
+	if (!nlen)
 		return ((char *)haystack);
-	if (len > len_h)
-		len = len_h;
-	while (len >= len_n)
+	while (*haystack && len-- >= nlen)
 	{
-		if (!ft_strncmp(haystack, needle, len_n))
+		if (!ft_strncmp(haystack, needle, nlen))
 			return ((char *)haystack);
 		haystack++;
-		len--;
 	}
 	return (NULL);
 }

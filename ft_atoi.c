@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 16:28:00 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/08 16:44:40 by lucius           ###   ########.fr       */
+/*   Created: 2024/11/10 11:57:56 by lucius            #+#    #+#             */
+/*   Updated: 2024/11/10 12:01:52 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_atoi(const char *nptr)
 			sign = -sign;
 		nptr++;
 	}
-	while (ft_isdigit(*nptr))
+	while (*nptr >= '0' && *nptr <= '9')
 	{
 		result = result * 10 + (*nptr - 48);
 		nptr++;
