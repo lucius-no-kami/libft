@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 15:22:50 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/10 16:22:20 by lucius           ###   ########.fr       */
+/*   Created: 2024/11/10 16:27:26 by lucius            #+#    #+#             */
+/*   Updated: 2024/11/10 16:51:41 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*sub;
+	size_t	flen;
 	size_t	slen;
+	char	*sub;
 
-	slen = ft_strlen(s);
-	if (start >= slen)
-		return (ft_strdup(""));
-	if (len > slen - start)
-		len = slen - start;
-	sub = (char *)malloc((len + 1) * sizeof(char));
+	flen = ft_strlen(s1);
+	slen = ft_strlen(s2);
+	sub = (char *)malloc((slen + flen + 1) * sizeof(char));
 	if (!sub)
 		return (sub);
-	ft_strlcpy(sub, s + start, len + 1);
+	ft_memmove(sub, s1, flen);
+	ft_memmove(sub + flen, s2, slen);
+	sub[flen + slen] = '\0';
 	return (sub);
 }
