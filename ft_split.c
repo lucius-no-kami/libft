@@ -6,18 +6,23 @@
 /*   By: lucius <lucius@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:25:29 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/11 17:26:19 by lucius           ###   ########.fr       */
+/*   Updated: 2024/11/12 08:39:40 by lucius           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**fsplit(char **split, size_t j)
+static void	fsplit(char **split, size_t j)
 {
-	while (j > 0)
-		free(split[--j]);
+	while (j--)
+	{
+		if (split[j])
+		{
+			free(split[j]);
+			split[j] = NULL;
+		}
+	}
 	free(split);
-	return (NULL);
 }
 
 static size_t	segcount(char const *s, char c)
@@ -39,11 +44,10 @@ static size_t	segcount(char const *s, char c)
 	return (segnum);
 }
 
-char	**spliter(char **split, char const *s, char c)
+static char	**spliter(char **split, char const *s, char c, size_t start)
 {
 	size_t	i;
 	size_t	j;
-	size_t	start;
 
 	i = 0;
 	j = 0;
@@ -58,7 +62,10 @@ char	**spliter(char **split, char const *s, char c)
 		{
 			split[j] = ft_substr(s, start, i - start);
 			if (!split[j])
-				return (fsplit(split, j));
+			{
+				fsplit(split, j);
+				return (NULL);
+			}
 			j++;
 		}
 	}
@@ -77,6 +84,7 @@ char	**ft_split(char const *s, char c)
 	splited = (char **)malloc((segnum + 1) * sizeof(char *));
 	if (!splited)
 		return (NULL);
-	spliter(splited, s, c);
+	if (!spliter(splited, s, c, 0))
+		return (NULL);
 	return (splited);
 }

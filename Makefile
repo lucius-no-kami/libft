@@ -21,7 +21,7 @@ SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 				ft_memcmp.c  ft_strnstr.c ft_atoi.c    \
 				ft_calloc.c  ft_strdup.c  ft_substr.c  \
 				ft_strjoin.c ft_strtrim.c ft_split.c   \
-				ft_itoa.c    ft_striteri.c \
+				ft_itoa.c    ft_strmapi.c ft_striteri.c \
 				ft_putchar_fd.c ft_putstr_fd.c \
 				ft_putendl_fd.c ft_putnbr_fd.c
 
@@ -34,7 +34,7 @@ OBJS		= 	ft_isalpha.o ft_isdigit.o ft_isalnum.o \
 				ft_memcmp.o  ft_strnstr.o ft_atoi.o    \
 				ft_calloc.o  ft_strdup.o  ft_substr.o  \
 				ft_strjoin.o ft_strtrim.o ft_split.o   \
-				ft_itoa.o    ft_striteri.o \
+				ft_itoa.o    ft_strmapi.o ft_striteri.o \
 				ft_putchar_fd.o ft_putstr_fd.o \
 				ft_putendl_fd.o ft_putnbr_fd.o
 
