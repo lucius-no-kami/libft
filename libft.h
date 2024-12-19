@@ -6,14 +6,20 @@
 /*   By: luluzuri <luluzuri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 08:48:59 by lucius            #+#    #+#             */
-/*   Updated: 2024/11/12 13:41:47 by luluzuri         ###   ########.fr       */
+/*   Updated: 2024/11/26 10:43:12 by luluzuri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
 # include <stdlib.h>
+# include <stdarg.h>
+# include <fcntl.h>
 # include <unistd.h>
 
 /* Character operations */
@@ -57,5 +63,20 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+
+/* Ft_printf */
+int		ft_printf(const char *format, ...);
+int		pf_putchar(char c);
+int		pf_putstr(char *str);
+int		pf_putnbr(long n);
+void	pf_puthex(char c, int *count, unsigned long n);
+void	pf_putadr(void *adr, int *count);
+
+/* Get_next_line */
+char	*get_next_line(int fd);
+char	*gnl_substr(const char *s, unsigned int start, size_t len);
+char	*gnl_substr(const char *s, unsigned int start, size_t len);
+char	*gnl_strdup(const char *s);
+char	*gnl_strjoin(char const *s1, char const *s2);
 
 #endif /* LIBFT_H */
